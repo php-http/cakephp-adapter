@@ -1,0 +1,46 @@
+{
+    "name": "php-http/cakephp-adapter",
+    "description": "Cake adapter for PHP-HTTP",
+    "license": "MIT",
+    "keywords": ["cakephp", "httplug", "http", "cake"],
+    "homepage": "http://httplug.io",
+    "authors": [
+        {
+            "name": "Joel Wurtz",
+            "email": "joel.wurtz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^5.5 || ^7.0",
+        "php-http/httplug": "^1.0",
+        "php-http/discovery": "^1.0",
+        "cakephp/cakephp": "^3.0"
+    },
+    "require-dev": {
+        "php-http/client-integration-tests": "^0.5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Http\\Adapter\\Cake\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Http\\Adapter\\Cake\\Tests\\": "tests/"
+        }
+    },
+    "provide": {
+        "php-http/client-implementation": "1.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-ci": "vendor/bin/phpunit --coverage-clover build/coverage.xml"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
