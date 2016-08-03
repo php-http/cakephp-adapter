@@ -12,14 +12,14 @@ use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Client compatible with PSR7 and Httplug interfaces, using a cackephp client
+ * Client compatible with PSR7 and Httplug interfaces, using a cackephp client.
  */
 class Client implements HttpClient
 {
     /** @var CakeClient */
     private $client;
 
-    /** @var ResponseFactory  */
+    /** @var ResponseFactory */
     private $responseFactory;
 
     /**
