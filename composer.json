@@ -17,7 +17,7 @@
         "cakephp/cakephp": "^3.1"
     },
     "require-dev": {
-        "php-http/client-integration-tests": "^0.5.1"
+        "php-http/client-integration-tests": "^0.6"
     },
     "autoload": {
         "psr-4": {
