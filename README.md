@@ -23,10 +23,17 @@ $ composer require php-http/cakephp-adapter
 
 ## Testing
 
+Start the development server using
+
+``` bash
+vendor/bin/http_test_server
+```
+
+Then run the test suite using
+
 ``` bash
 $ composer test
 ```
-
 
 ## Contributing
 
