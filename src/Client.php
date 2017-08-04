@@ -47,7 +47,7 @@ class Client implements HttpClient
             ->withProtocolVersion($request->getProtocolVersion())
             ->withBody($request->getBody());
 
-        if ($cakeRequest->header('Content-Type') === null) {
+        if (null === $cakeRequest->header('Content-Type')) {
             $cakeRequest->header('Content-Type', 'application/x-www-form-urlencoded');
         }
 
