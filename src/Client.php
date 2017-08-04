@@ -38,7 +38,7 @@ class Client implements HttpClient
     public function sendRequest(RequestInterface $request)
     {
         $cakeRequest = new Request(
-            (string)$request->getUri(),
+            (string) $request->getUri(),
             $request->getMethod(),
             $request->getHeaders()
         );
