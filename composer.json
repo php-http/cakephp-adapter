@@ -14,7 +14,7 @@
         "php": "^5.5 || ^7.0",
         "php-http/httplug": "^1.0",
         "php-http/discovery": "^1.0",
-        "cakephp/cakephp": "^3.4"
+        "cakephp/cakephp": "^3.4.12"
     },
     "require-dev": {
         "php-http/client-integration-tests": "^0.6"
