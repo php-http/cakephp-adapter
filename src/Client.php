@@ -3,8 +3,8 @@
 namespace Http\Adapter\Cake;
 
 use Cake\Core\Exception\Exception;
-use Cake\Network\Http\Client as CakeClient;
-use Cake\Network\Http\Request;
+use Cake\Http\Client as CakeClient;
+use Cake\Http\Client\Request;
 use Http\Client\Exception\NetworkException;
 use Http\Client\HttpClient;
 use Http\Discovery\MessageFactoryDiscovery;
@@ -12,7 +12,7 @@ use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
 
 /**
- * Client compatible with PSR7 and Httplug interfaces, using a cackephp client.
+ * Client compatible with PSR7 and Httplug interfaces, using a CakePHP client.
  */
 class Client implements HttpClient
 {
@@ -37,32 +37,26 @@ class Client implements HttpClient
      */
     public function sendRequest(RequestInterface $request)
     {
-        $cakeRequest = new Request();
-        $cakeRequest->method($request->getMethod());
-        $cakeRequest->url((string) $request->getUri());
-        $cakeRequest->version($request->getProtocolVersion());
-        $cakeRequest->body($request->getBody()->getContents());
+        $cakeRequest = new Request(
+            (string) $request->getUri(),
+            $request->getMethod(),
+            $request->getHeaders()
+        );
 
-        foreach ($request->getHeaders() as $header => $values) {
-            $cakeRequest->header($header, $request->getHeaderLine($header));
-        }
+        $cakeRequest = $cakeRequest
+            ->withProtocolVersion($request->getProtocolVersion())
+            ->withBody($request->getBody());
 
         if (null === $cakeRequest->header('Content-Type')) {
             $cakeRequest->header('Content-Type', 'application/x-www-form-urlencoded');
         }
 
         try {
-            $cakeResponse = $this->client->send($cakeRequest, $this->client->config());
+            $response = $this->client->send($cakeRequest, $this->client->config());
         } catch (Exception $exception) {
             throw new NetworkException('Failed to send request', $request, $exception);
         }
 
-        return $this->responseFactory->createResponse(
-            $cakeResponse->statusCode(),
-            null,
-            $cakeResponse->headers(),
-            $cakeResponse->body(),
-            $cakeResponse->version()
-        );
+        return $response;
     }
 }
