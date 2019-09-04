@@ -10,21 +10,26 @@ use Http\Client\HttpClient;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
+use Throwable;
 
 /**
  * Client compatible with PSR7 and Httplug interfaces, using a CakePHP client.
  */
 class Client implements HttpClient
 {
-    /** @var CakeClient */
+    /**
+     * @var CakeClient
+     */
     private $client;
 
-    /** @var ResponseFactory */
+    /**
+     * @var ResponseFactory
+     */
     private $responseFactory;
 
     /**
-     * @param CakeClient      $client
-     * @param ResponseFactory $responseFactory
+     * @param CakeClient|null      $client
+     * @param ResponseFactory|null $responseFactory
      */
     public function __construct(CakeClient $client = null, ResponseFactory $responseFactory = null)
     {
@@ -47,13 +52,13 @@ class Client implements HttpClient
             ->withProtocolVersion($request->getProtocolVersion())
             ->withBody($request->getBody());
 
-        if (null === $cakeRequest->header('Content-Type')) {
-            $cakeRequest->header('Content-Type', 'application/x-www-form-urlencoded');
+        if (null === $cakeRequest->getHeader('Content-Type')) {
+            $cakeRequest = $cakeRequest->withHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
 
         try {
-            $response = $this->client->send($cakeRequest, $this->client->config());
-        } catch (Exception $exception) {
+            $response = $this->client->send($cakeRequest, $this->client->getConfig());
+        } catch (Throwable $exception) {
             throw new NetworkException('Failed to send request', $request, $exception);
         }
 

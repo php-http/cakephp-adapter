@@ -7,7 +7,10 @@ use Http\Client\Tests\HttpClientTest;
 
 class ClientTest extends HttpClientTest
 {
-    protected function createHttpAdapter()
+    /**
+     * @return \Http\Adapter\Cake\Client
+     */
+    protected function createHttpAdapter(): Client
     {
         return new Client();
     }
