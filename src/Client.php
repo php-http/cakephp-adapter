@@ -18,18 +18,18 @@ use Throwable;
 class Client implements HttpClient
 {
     /**
-     * @var CakeClient
+     * @var \Cake\Http\Client
      */
     private $client;
 
     /**
-     * @var ResponseFactory
+     * @var \Http\Message\ResponseFactory
      */
     private $responseFactory;
 
     /**
-     * @param CakeClient|null      $client
-     * @param ResponseFactory|null $responseFactory
+     * @param \Cake\Http\Client|null $client
+     * @param \Http\Message\ResponseFactory|null $responseFactory
      */
     public function __construct(CakeClient $client = null, ResponseFactory $responseFactory = null)
     {
@@ -38,7 +38,7 @@ class Client implements HttpClient
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function sendRequest(RequestInterface $request)
     {
