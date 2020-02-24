@@ -10,6 +10,7 @@ use Http\Client\HttpClient;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
 /**
@@ -40,7 +41,7 @@ class Client implements HttpClient
     /**
      * @inheritdoc
      */
-    public function sendRequest(RequestInterface $request)
+    public function sendRequest(RequestInterface $request): ResponseInterface
     {
         $cakeRequest = new Request(
             (string) $request->getUri(),
