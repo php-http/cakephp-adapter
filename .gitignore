@@ -1,6 +1,8 @@
-/behat.yml
-/build/
-/composer.lock
-/phpspec.yml
-/phpunit.xml
-/vendor/
+behat.yml
+build/
+composer.lock
+phpspec.yml
+phpunit.xml
+.phpunit.result.cache
+vendor/
+.idea/

@@ -1,5 +1,9 @@
 # Change Log
 
+## 0.3.0
+
+- CakePHP 4.x compatibility
+
 ## 0.2.0
 
 ### Changed

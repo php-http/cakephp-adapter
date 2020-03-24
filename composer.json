@@ -11,13 +11,14 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7.0",
-        "php-http/httplug": "^1.0",
+        "php": "^7.2",
+        "php-http/httplug": "^2.0",
         "php-http/discovery": "^1.0",
-        "cakephp/cakephp": "^3.4.12"
+        "cakephp/cakephp": "^4.0"
     },
     "require-dev": {
-        "php-http/client-integration-tests": "^0.6"
+        "php-http/client-integration-tests": "^0.6",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {
@@ -36,9 +37,10 @@
         "test": "vendor/bin/phpunit",
         "test-ci": "vendor/bin/phpunit --coverage-clover build/coverage.xml"
     },
+    "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "0.2-dev"
+            "dev-master": "0.3-dev"
         }
     }
 }

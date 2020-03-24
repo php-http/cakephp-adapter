@@ -7,8 +7,9 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/cakephp-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/cakephp-adapter)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/cakephp-adapter.svg?style=flat-square)](https://packagist.org/packages/php-http/cakephp-adapter)
 
-**Httplug adapter for the cakephp network library**
+Httplug adapter for the **CakePHP** HTTP library.
 
+This branch is for use with CakePHP 4.0+.
 
 ## Install
 

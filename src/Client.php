@@ -10,21 +10,27 @@ use Http\Client\HttpClient;
 use Http\Discovery\MessageFactoryDiscovery;
 use Http\Message\ResponseFactory;
 use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use Throwable;
 
 /**
  * Client compatible with PSR7 and Httplug interfaces, using a CakePHP client.
  */
 class Client implements HttpClient
 {
-    /** @var CakeClient */
+    /**
+     * @var \Cake\Http\Client
+     */
     private $client;
 
-    /** @var ResponseFactory */
+    /**
+     * @var \Http\Message\ResponseFactory
+     */
     private $responseFactory;
 
     /**
-     * @param CakeClient      $client
-     * @param ResponseFactory $responseFactory
+     * @param \Cake\Http\Client|null $client
+     * @param \Http\Message\ResponseFactory|null $responseFactory
      */
     public function __construct(CakeClient $client = null, ResponseFactory $responseFactory = null)
     {
@@ -33,9 +39,9 @@ class Client implements HttpClient
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
-    public function sendRequest(RequestInterface $request)
+    public function sendRequest(RequestInterface $request): ResponseInterface
     {
         $cakeRequest = new Request(
             (string) $request->getUri(),
@@ -47,13 +53,13 @@ class Client implements HttpClient
             ->withProtocolVersion($request->getProtocolVersion())
             ->withBody($request->getBody());
 
-        if (null === $cakeRequest->header('Content-Type')) {
-            $cakeRequest->header('Content-Type', 'application/x-www-form-urlencoded');
+        if (null === $cakeRequest->getHeader('Content-Type')) {
+            $cakeRequest = $cakeRequest->withHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
 
         try {
-            $response = $this->client->send($cakeRequest, $this->client->config());
-        } catch (Exception $exception) {
+            $response = $this->client->send($cakeRequest, $this->client->getConfig());
+        } catch (Throwable $exception) {
             throw new NetworkException('Failed to send request', $request, $exception);
         }
 
