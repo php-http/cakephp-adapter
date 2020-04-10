@@ -2,7 +2,6 @@
 
 namespace Http\Adapter\Cake;
 
-use Cake\Core\Exception\Exception;
 use Cake\Http\Client as CakeClient;
 use Cake\Http\Client\Request;
 use Http\Client\Exception\NetworkException;
@@ -53,7 +52,7 @@ class Client implements HttpClient
             ->withProtocolVersion($request->getProtocolVersion())
             ->withBody($request->getBody());
 
-        if (null === $cakeRequest->getHeader('Content-Type')) {
+        if (!$cakeRequest->getHeader('Content-Type')) {
             $cakeRequest = $cakeRequest->withHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
 
