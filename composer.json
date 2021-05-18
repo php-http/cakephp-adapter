@@ -30,6 +30,7 @@
         }
     },
     "provide": {
+        "psr/http-client-implementation": "1.0",
         "php-http/client-implementation": "1.0"
     },
     "scripts": {
