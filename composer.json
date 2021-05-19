@@ -3,7 +3,7 @@
     "description": "Cake adapter for PHP-HTTP",
     "license": "MIT",
     "keywords": ["cakephp", "httplug", "http", "cake"],
-    "homepage": "http://httplug.io",
+    "homepage": "https://httplug.io",
     "authors": [
         {
             "name": "Joel Wurtz",
