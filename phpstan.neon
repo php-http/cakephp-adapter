@@ -1,0 +1,8 @@
+parameters:
+    level: 8
+    paths:
+        - src/
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    ignoreErrors:
+        - '#Parameter \#3 \$headers of class .+Request constructor expects array<non-empty-string, non-empty-string>, array<array<string>> given.#'

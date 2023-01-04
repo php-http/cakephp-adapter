@@ -5,11 +5,12 @@
 [![Build Status](https://img.shields.io/travis/php-http/cakephp-adapter.svg?style=flat-square)](https://travis-ci.org/php-http/cakephp-adapter)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-http/cakephp-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/cakephp-adapter)
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/cakephp-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/cakephp-adapter)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.4-8892BF.svg)](https://php.net/)
 [![Total Downloads](https://img.shields.io/packagist/dt/php-http/cakephp-adapter.svg?style=flat-square)](https://packagist.org/packages/php-http/cakephp-adapter)
 
 [HTTPlug](http://httplug.io) adapter for the [CakePHP](https://cakephp.org/) HTTP library.
 
-This branch is for use with CakePHP 4.0+.
+This branch is for use with CakePHP 4.2+.
 
 ## Install
 
