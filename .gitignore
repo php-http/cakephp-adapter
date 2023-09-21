@@ -4,5 +4,6 @@ composer.lock
 phpspec.yml
 phpunit.xml
 .phpunit.result.cache
+.phpunit.cache/
 vendor/
 .idea/
