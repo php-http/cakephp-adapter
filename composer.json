@@ -13,6 +13,10 @@
         {
             "name": "Joel Wurtz",
             "email": "joel.wurtz@gmail.com"
+        },
+        {
+            "name": "Mark Scherer",
+            "email": "euromark@web.de"
         }
     ],
     "require": {
