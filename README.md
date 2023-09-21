@@ -2,7 +2,7 @@
 
 [![Latest Version](https://img.shields.io/github/release/php-http/cakephp-adapter.svg?style=flat-square)](https://github.com/php-http/cakephp-adapter/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://img.shields.io/travis/php-http/cakephp-adapter.svg?style=flat-square)](https://travis-ci.org/php-http/cakephp-adapter)
+[![CI](https://github.com/php-http/cakephp-adapter/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/php-http/cakephp-adapter/actions/workflows/ci.yml)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/php-http/cakephp-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/cakephp-adapter)
 [![Quality Score](https://img.shields.io/scrutinizer/g/php-http/cakephp-adapter.svg?style=flat-square)](https://scrutinizer-ci.com/g/php-http/cakephp-adapter)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF.svg)](https://php.net/)
