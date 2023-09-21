@@ -12,6 +12,12 @@
 
 This branch is for use with CakePHP 5.0+.
 
+## Version Info
+
+- ^0.2: CakePHP 3
+- ^0.3: CakePHP 4
+- ^0.4: CakePHP 5
+
 ## Install
 
 Via Composer
@@ -19,9 +25,6 @@ Via Composer
 ``` bash
 $ composer require php-http/cakephp-adapter
 ```
-
-## Usage
-
 
 ## Testing
 
