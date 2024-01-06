@@ -10,9 +10,13 @@
 
 [HTTPlug](http://httplug.io) adapter for the [CakePHP](https://cakephp.org/) HTTP library.
 
-This branch is for use with CakePHP 5.0+.
+# Deprecated
+
+The CakePHP HTTP client implements the PSR-18 `HttpClientInterface`. If your code still relies on the HTTPlug `HttpClient`, we recommend to upgrade to rely on the compatible PSR-18 `HttpClientInterface` interface directly instead.
 
 ## Version Info
+
+This branch is for use with CakePHP 5.0+.
 
 - ^0.2: CakePHP 3
 - ^0.3: CakePHP 4
