@@ -1,4 +1,5 @@
 {
+    "abandoned": "cakephp/http",
     "name": "php-http/cakephp-adapter",
     "description": "CakePHP adapter for PHP-HTTP",
     "license": "MIT",
